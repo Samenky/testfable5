@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design system — premium-froid */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-inverse: #fafaf9;
+  --color-text-primary-dark: #fafaf9;
+  --color-text-secondary: #71717a;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-glow-subtle: rgba(255, 255, 255, 0.08);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-card: 12px;
+  --radius-button: 8px;
+
+  --tracking-headline: -0.03em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary-dark);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(250, 250, 249, 0.16);
+}
+
+/* Scroll indicator — segment lumineux qui descend en boucle */
+@keyframes scroll-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
