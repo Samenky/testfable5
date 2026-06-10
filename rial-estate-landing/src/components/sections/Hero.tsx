@@ -7,7 +7,7 @@ import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import { fadeUp, staggerChildren } from "@/lib/animations";
 import { useIsMobile, usePrefersReducedMotion } from "@/hooks/useMediaQuery";
 
-const HeroOrb = dynamic(() => import("@/components/three/HeroOrb"), {
+const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
   ssr: false,
   loading: () => <div className="h-full w-full" aria-hidden="true" />,
 });
@@ -21,8 +21,8 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-screen flex-col items-center bg-bg-primary px-6 pb-20"
     >
-      <div className="pointer-events-none h-[42vh] w-full max-w-3xl" aria-hidden="true">
-        <HeroOrb simple={isMobile} reduced={reducedMotion} />
+      <div className="pointer-events-none h-[48vh] w-full max-w-4xl" aria-hidden="true">
+        <HeroScene simple={isMobile} reduced={reducedMotion} />
       </div>
 
       <motion.div
