@@ -20,9 +20,9 @@ export default function Button({
   const styles = clsx(
     "inline-flex items-center justify-center transition duration-200",
     variant === "primary" &&
-      "rounded-button bg-bg-inverse px-6 py-3 text-sm font-medium text-bg-primary hover:scale-[1.02] active:scale-100 disabled:opacity-60 disabled:hover:scale-100",
+      "h-12 rounded-lg bg-light px-8 text-sm font-medium text-midnight hover:scale-[1.02] active:scale-100 disabled:opacity-60 disabled:hover:scale-100",
     variant === "secondary" &&
-      "text-sm text-text-secondary underline decoration-white/20 underline-offset-4 hover:text-text-primary-dark hover:decoration-white/50",
+      "text-sm text-slate underline decoration-border underline-offset-4 hover:text-light hover:decoration-slate",
     className
   );
 
