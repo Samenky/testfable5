@@ -1,0 +1,40 @@
+/* ============================================================
+   RIAL ESTATE — Design tokens (source de vérité unique)
+   Palette PREMIUM-FROID. Aucun autre code couleur dans le projet.
+   ============================================================ */
+
+@theme {
+  /* Surfaces */
+  --color-background-deep: #0a0e1a;
+  --color-background-elevated: #0f1424;
+  --color-surface-line: #1a2138;
+
+  /* Texte */
+  --color-text-primary: #f5f1e8;
+  --color-text-secondary: #a8a599;
+  --color-text-muted: #6b6960;
+
+  /* Accents — parcimonie stricte */
+  --color-accent-signal: #e8c547; /* CTA primaire + highlights forts uniquement */
+  --color-accent-cool: #4a7cff; /* liens, états actifs */
+  --color-alert: #ff3b47; /* compteur section problème, trails rouges */
+
+  /* Scène light-trails (réservés au shader / horizon) */
+  --color-horizon-warm: #1f1a2e;
+  --color-trail-warm: #fff2d6;
+
+  /* Typo */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --tracking-display: -0.05em; /* wordmark */
+  --tracking-headline: -0.03em; /* H1/H2 */
+
+  /* Radii */
+  --radius-card: 8px;
+  --radius-modal: 12px;
+  --radius-pill: 999px;
+
+  /* Easing maison (entrées hero, reveals) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
