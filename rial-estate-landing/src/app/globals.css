@@ -73,6 +73,16 @@ body {
   }
 }
 
+/* Skyline — fenêtres : éteintes par défaut, amber + glow quand allumées */
+.skyline-window {
+  fill: var(--color-midnight);
+  transition: fill 0.5s ease;
+}
+.skyline-window.lit {
+  fill: var(--color-amber);
+  filter: drop-shadow(0 0 4px var(--color-amber));
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

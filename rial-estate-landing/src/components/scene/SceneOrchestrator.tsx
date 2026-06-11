@@ -9,6 +9,11 @@ const AuroraShader = dynamic(() => import("./AuroraShader"), {
   loading: () => <div className="absolute inset-0 bg-midnight" />,
 });
 
+const SkylineBackground = dynamic(() => import("./SkylineBackground"), {
+  ssr: false,
+  loading: () => null,
+});
+
 /**
  * Monte tous les calques fixes de la scène "Ville-Veille" derrière
  * le contenu (main est en z-10) et initialise l'orchestration scroll.
@@ -27,7 +32,7 @@ export default function SceneOrchestrator() {
         <AuroraShader />
       </div>
       <div className="absolute inset-x-0 bottom-0 z-[1]">
-        {/* Skyline — étape 5 */}
+        <SkylineBackground />
       </div>
       <div className="absolute inset-0 z-[2]">{/* Fireflies — étape 6 */}</div>
       <div className="absolute inset-0 z-[5]">{/* LivingLine — étape 7 */}</div>
