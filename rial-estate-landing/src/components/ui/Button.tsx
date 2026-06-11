@@ -18,7 +18,9 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const styles = clsx(
-    "inline-flex items-center justify-center transition duration-200",
+    // pointer-events-auto : le <main> est pointer-transparent pour laisser
+    // le curseur interagir avec la scène 3D derrière
+    "pointer-events-auto inline-flex items-center justify-center transition duration-200",
     variant === "primary" &&
       "h-12 rounded-lg bg-light px-8 text-sm font-medium text-midnight hover:scale-[1.02] active:scale-100 disabled:opacity-60 disabled:hover:scale-100",
     variant === "secondary" &&

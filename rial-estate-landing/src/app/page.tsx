@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <SceneMount />
-      <main className="relative z-10">
+      <main className="relative z-10 pointer-events-none">
         <Hero />
         <Problem />
         <Solution />
