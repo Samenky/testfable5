@@ -1,23 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { geistSans, geistMono } from "@/lib/fonts";
 import GrainOverlay from "@/components/ui/GrainOverlay";
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScrollProvider from "@/components/primitives/SmoothScrollProvider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Rial Estate — L'agent IA des agences immobilières indépendantes",
+  title: "Rial Estate — L'agent IA qui qualifie vos leads pendant que vous dormez",
   description:
-    "Réponse en 30 secondes, qualification, créneaux de visite proposés. Vos prospects ne tombent plus chez le concurrent d'à côté.",
+    "Qualification de leads immobiliers en moins de 30 secondes, 24/7. Pour agences indépendantes. Sans recruter, sans SDR.",
 };
 
 export default function RootLayout({
@@ -30,9 +20,8 @@ export default function RootLayout({
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-midnight text-light">
-        <SmoothScroll />
-        {children}
+      <body className="min-h-full bg-background-deep text-text-primary">
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <GrainOverlay />
       </body>
     </html>

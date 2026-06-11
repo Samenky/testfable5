@@ -1,48 +1,42 @@
 import Button from "@/components/ui/Button";
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
+import LightTrailsCanvas from "@/components/three/LightTrailsCanvas";
 
 /**
- * Section 1 — Hero. Version statique (placeholder structurel) :
- * les animations d'entrée (split par mot, staggers) arrivent à l'étape 10.
- * La scène vit derrière (calques fixes), le hero n'ajoute que du texte.
+ * SECTION 1 — HERO "LIGHT TRAILS".
+ * ÉTAPE 0 : structure statique (wordmark, H1, CTA, indicateur)
+ * sur le stub canvas. Shader + GSAP timeline aux ÉTAPES 1–2.
  */
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center bg-transparent px-6 text-center"
-    >
-      <p className="text-xs uppercase tracking-[0.2em] text-slate">
-        Rial Estate · L&apos;agent IA pour agences immobilières indépendantes
-      </p>
+    <section id="hero" className="relative h-screen overflow-hidden">
+      <LightTrailsCanvas className="z-0" />
 
-      <h1 className="mt-10 max-w-5xl text-[40px] font-medium leading-[1.1] tracking-headline text-light md:text-[80px] md:leading-[1.05]">
-        <span className="opacity-70">
-          Chaque nuit, vos leads cherchent une lumière.
-        </span>
-        <br />
-        Soyez la seule qui reste allumée.
-      </h1>
+      <h2
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 -translate-y-[15%] select-none whitespace-nowrap text-center font-sans text-[clamp(96px,18vw,280px)] font-extrabold tracking-display text-text-primary mix-blend-exclusion"
+      >
+        RIAL ESTATE
+      </h2>
 
-      <p className="mt-8 max-w-[520px] text-lg leading-[1.6] text-slate">
-        Réponse en 30 secondes, qualification, créneaux de visite proposés.
-        Pendant que vos concurrents dorment, votre agence travaille.
-      </p>
-
-      <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
-        <Button href="#access" aria-label="Recevoir un accès — aller au formulaire">
-          Recevoir un accès
-        </Button>
-        <Button
-          variant="secondary"
-          href="#problem"
-          aria-label="Voir comment ça marche — section suivante"
-        >
-          Voir comment ça marche →
-        </Button>
+      <div className="relative z-20 flex h-full flex-col items-center justify-center gap-6 px-6 text-center">
+        <h1 className="max-w-4xl text-[clamp(40px,5vw,72px)] font-semibold leading-[1.05] tracking-headline text-text-primary">
+          L&apos;agent IA qui qualifie vos leads pendant que vous dormez.
+        </h1>
+        <p className="text-[clamp(16px,1.2vw,20px)] text-text-secondary">
+          30 secondes. 24/7. Sans recruter. Sans SDR.
+        </p>
+        <div className="mt-4 flex items-center gap-8">
+          <Button href="#cta-final" withArrow>
+            Recevoir un accès
+          </Button>
+          <Button href="#demo" variant="ghost">
+            Voir l&apos;agent en action
+          </Button>
+        </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <div className="absolute inset-x-0 bottom-8 z-20 flex justify-center">
         <ScrollIndicator />
       </div>
     </section>

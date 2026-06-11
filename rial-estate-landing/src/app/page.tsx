@@ -1,21 +1,21 @@
-import SceneMount from "@/components/scene3d/SceneMount";
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
-import Solution from "@/components/sections/Solution";
-import Territory from "@/components/sections/Territory";
-import FinalCTA from "@/components/sections/FinalCTA";
+import Demo from "@/components/sections/Demo";
+import Particles from "@/components/sections/Particles";
+import Pricing from "@/components/sections/Pricing";
+import Faq from "@/components/sections/Faq";
+import FinalCta from "@/components/sections/FinalCta";
 
 export default function Home() {
   return (
-    <>
-      <SceneMount />
-      <main className="relative z-10 pointer-events-none">
-        <Hero />
-        <Problem />
-        <Solution />
-        <Territory />
-        <FinalCTA />
-      </main>
-    </>
+    <main className="relative">
+      <Hero />
+      <Problem />
+      <Demo />
+      <Particles />
+      <Pricing />
+      <Faq />
+      <FinalCta />
+    </main>
   );
 }

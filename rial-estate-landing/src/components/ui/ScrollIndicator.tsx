@@ -1,16 +1,32 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/cn";
+
+/**
+ * Chevron bounce en bas du hero.
+ * Disparaît dès que scrollY > 50px.
+ */
 export default function ScrollIndicator() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY <= 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div
       aria-hidden="true"
-      className="flex flex-col items-center gap-3 text-slate"
+      className={cn(
+        "flex flex-col items-center text-text-primary transition-opacity duration-500",
+        visible ? "opacity-60" : "opacity-0"
+      )}
     >
-      <span className="text-[11px] uppercase tracking-[0.2em]">Scroll</span>
-      <span className="relative block h-8 w-px overflow-hidden bg-border">
-        <span
-          className="absolute left-0 top-0 h-1/3 w-full bg-light/60"
-          style={{ animation: "scroll-line 1.8s ease-in-out infinite" }}
-        />
-      </span>
+      <ChevronDown size={20} className="animate-bounce" />
     </div>
   );
 }
