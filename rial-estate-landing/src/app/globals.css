@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+html {
+  background: var(--color-background-deep);
+}
+
+body {
+  background: var(--color-background-deep);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent-cool) 35%, transparent);
+  color: var(--color-text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
